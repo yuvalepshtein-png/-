@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המשימה: הצלת חיים - שאלון חוקר ביו-רפואי</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f0fdf4;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col items-center py-8 px-4">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl text-center mb-8">
+        <span class="bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-1.5 rounded-full inline-block mb-3">
+            ערכת לימוד וחקר ביו-רפואי • מסלול צמרת
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+            המשימה: הצלת חיים
+        </h1>
+        <p class="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
+            ענו על השאלות מתוך החוברת, חקרו את מנגנון הקרישה וה-TXA, ובדקו את הבנתכם בזמן אמת.
+        </p>
+    </header>
+
+    <!-- Navigation / Progress Bar -->
+    <div class="w-full max-w-4xl mb-8 bg-white p-4 rounded-2xl card-shadow border border-slate-100">
+        <div class="flex justify-between items-center mb-2 font-medium text-sm text-slate-500">
+            <span id="progress-text">שלב 1 מתוך 4</span>
+            <span id="progress-percent">25% הושלמו</span>
+        </div>
+        <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
+            <div id="progress-bar" class="bg-emerald-500 h-full w-1/4 transition-all duration-500 ease-out"></div>
+        </div>
+        
+        <!-- Step Navigation Pills -->
+        <div class="flex justify-between mt-4 gap-1 sm:gap-2">
+            <button onclick="goToStep(1)" id="tab-1" class="flex-1 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-emerald-600 text-white transition-all">
+                1. קסקדת הקרישה
+            </button>
+            <button onclick="goToStep(2)" id="tab-2" class="flex-1 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                2. איום הדימום
+            </button>
+            <button onclick="goToStep(3)" id="tab-3" class="flex-1 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                3. חזית ה-TXA
+            </button>
+            <button onclick="goToStep(4)" id="tab-4" class="flex-1 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                4. הגשת פתרון
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-10 card-shadow border border-slate-100 mb-8">
+        
+        <!-- ================= STEP 1 ================= -->
+        <section id="step-1" class="step-content">
+            <div class="border-b border-slate-100 pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">שלב 1: מנגנון קסקדת הקרישה</h2>
+                <p class="text-slate-500 text-sm mt-1">חקרו את מנגנון הקרישה הטבעי מתוך איור 2 וענו על השאלות המכוונות לאחריו.</p>
+            </div>
+
+            <!-- Image Block using Krish.jpg -->
+            <div class="bg-gradient-to-br from-slate-50 to-emerald-50/30 p-3 sm:p-5 rounded-3xl border border-emerald-100/60 mb-8 flex flex-col items-center">
+                <div class="w-full overflow-hidden rounded-2xl border border-slate-200/80 shadow-md bg-white">
+                    <img 
+                        src="Krish.jpg" 
+                        alt="שרשרת הקרישה הטבעית והחלמת כלי הדם" 
+                        class="w-full h-auto object-contain block mx-auto rounded-2xl"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'p-8 text-center bg-amber-50 rounded-2xl border border-amber-200\'><p class=\'font-bold text-amber-900 mb-1\'>📷 תמונת Krish.jpg</p><p class=\'text-xs text-amber-700\'>יש לוודא שקובץ התמונה Krish.jpg נמצא באותה תיקייה של קובץ ה-HTML.</p></div>';"
+                    >
+                </div>
+                <p class="text-center text-emerald-900 font-bold text-sm mt-3">
+                    איור 2: שרשרת הקרישה הטבעית ופירוקה
+                </p>
+            </div>
+
+            <!-- Interactive Dropdown Cards (Matching Task) -->
+            <h3 class="font-bold text-lg text-slate-800 mb-4">זיהוי שלבי הקרישה והחלמת כלי הדם</h3>
+            
+            <!-- Visual Icons for Step 1 -->
+            <div class="grid grid-cols-3 gap-3 mb-6">
+                <div class="bg-amber-50/80 border border-amber-200/70 p-3 rounded-2xl text-center flex flex-col items-center">
+                    <span class="text-2xl mb-1">🩸</span>
+                    <span class="font-bold text-xs text-amber-900">פקק ראשוני (טסיות)</span>
+                </div>
+                <div class="bg-blue-50/80 border border-blue-200/70 p-3 rounded-2xl text-center flex flex-col items-center">
+                    <span class="text-2xl mb-1">🕸️</span>
+                    <span class="font-bold text-xs text-blue-900">רשת פיברין ("הדבק")</span>
+                </div>
+                <div class="bg-purple-50/80 border border-purple-200/70 p-3 rounded-2xl text-center flex flex-col items-center">
+                    <span class="text-2xl mb-1">✂️</span>
+                    <span class="font-bold text-xs text-purple-900">פלסמין ("מספריים")</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-300 transition-all">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center mb-3">1</div>
+                        <h4 class="font-bold text-slate-800 mb-1">הפציעה והפקק הראשוני</h4>
+                        <p class="text-xs text-slate-500 mb-4">טסיות הדם נצמדות לקרע ויוצרות חסימה זמנית וחלשה בלבד.</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">בחרו את הרכיב המרכזי:</label>
+                        <select id="match-1" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="">-- בחרו מהרשימה --</option>
+                            <option value="platelets">טסיות דם (פקק זמני)</option>
+                            <option value="fibrin">סיבי פיברין ("הדבק")</option>
+                            <option value="plasmin">אנזים פלסמין ("מספריים")</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-300 transition-all">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center mb-3">2-3</div>
+                        <h4 class="font-bold text-slate-800 mb-1">היווצרות ה'דבק' וקריש יציב</h4>
+                        <p class="text-xs text-slate-500 mb-4">קסקדת הקרישה הופכת את הפיברינוגן לרשת חזקה ועמידה מעל הפצע.</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">בחרו את הרכיב המרכזי:</label>
+                        <select id="match-2" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="">-- בחרו מהרשימה --</option>
+                            <option value="platelets">טסיות דם (פקק זמני)</option>
+                            <option value="fibrin">סיבי פיברין ("הדבק")</option>
+                            <option value="plasmin">אנזים פלסמין ("מספריים")</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-300 transition-all">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center mb-3">4</div>
+                        <h4 class="font-bold text-slate-800 mb-1">פירוק הקריש והחלמה</h4>
+                        <p class="text-xs text-slate-500 mb-4">פירוק רשת הפיברין לאחר החלמת הרקמה לחידוש זרימת הדם.</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">בחרו את הרכיב המרכזי:</label>
+                        <select id="match-3" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="">-- בחרו מהרשימה --</option>
+                            <option value="platelets">טסיות דם (פקק זמני)</option>
+                            <option value="fibrin">סיבי פיברין ("הדבק")</option>
+                            <option value="plasmin">אנזים פלסמין ("מספריים")</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Questions (Short Answers from Workbook) -->
+            <div class="space-y-6 mb-8 border-t border-slate-100 pt-6">
+                <h3 class="font-bold text-lg text-slate-800">שאלות מכוונות להבנת האיור (עבודה זוגית)</h3>
+
+                <!-- Q1 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                    <label class="block font-semibold text-slate-800 mb-2">
+                        1. מבנה הקריש (שלב 1 מול שלב 3):
+                    </label>
+                    <p class="text-sm text-slate-600 mb-3">
+                        מהו ההבדל המרכזי בין ה"פקק הזמני" שיוצרות טסיות הדם בשלב 1, לבין ה"קריש היציב" המוצג בשלב 3? מאיזה רכיב בנוי ה"דבק" שמחזק את הקריש?
+                    </p>
+                    <textarea id="open-q1" rows="3" class="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none" placeholder="הקלידו את תשובתכם כאן..."></textarea>
+                    <div id="feedback-q1" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                    <label class="block font-semibold text-slate-800 mb-2">
+                        2. מעבר מחומר מומס לרשת סיבים (שלב 2 ו-3):
+                    </label>
+                    <p class="text-sm text-slate-600 mb-3">
+                        כיצד השינוי המבני הזה (מהפיכת חלבון שנע בדם לרשת סיבים דביקה) מאפשר לעצור את זרימת הדם החוצה לחלוטין?
+                    </p>
+                    <textarea id="open-q2" rows="3" class="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none" placeholder="הקלידו את תשובתכם כאן..."></textarea>
+                    <div id="feedback-q2" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                    <label class="block font-semibold text-slate-800 mb-2">
+                        3. שלב הניקוי והתיקון (שלב 4):
+                    </label>
+                    <p class="text-sm text-slate-600 mb-3">
+                        מהו תפקידו של האנזים פלסמין בשלב 4, ומדוע שלב זה חיוני לחזרת כלי הדם לתפקוד תקין לאחר שהפצע החלים?
+                    </p>
+                    <textarea id="open-q3" rows="3" class="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none" placeholder="הקלידו את תשובתכם כאן..."></textarea>
+                    <div id="feedback-q3" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+                </div>
+            </div>
+
+            <!-- Deepening Question -->
+            <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
+                <span class="text-xs font-bold text-amber-800 uppercase tracking-wider bg-amber-200/70 px-3 py-1 rounded-full">שאלה להעמקה</span>
+                <h4 class="font-bold text-amber-900 mt-3 mb-2">תזמון ואיזון במערכת:</h4>
+                <p class="text-sm text-amber-900/80 mb-4 leading-relaxed">
+                    האיור מראה לנו שמערכת הדם מכילה גם מנגנון שבונה את קריש הדם (פיברין) וגם מנגנון שמפרק אותו (האנזים פלסמין).<br>
+                    <strong>הסתמכו על שלבי התהליך באיור וענו:</strong><br>
+                    מתי לדעתכם הוא התזמון הנכון שבו הגוף צריך להפעיל את האנזים המפרק (הפלסמין), ומה לדעתכם יתרחש בתוך כלי הדם אם האנזים המפרק יופעל מוקדם מדי - עוד בזמן שהפצע מדמם?
+                </p>
+                <textarea id="open-deep" rows="4" class="w-full p-3 bg-white border border-amber-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="כתבו את ניתוח התזמון וההשלכות הפיזיולוגיות..."></textarea>
+                <div id="feedback-deep" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+            </div>
+
+            <button onclick="checkStep1()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all shadow-md">
+                בדוק את כל התשובות לשלב 1
+            </button>
+        </section>
+
+        <!-- ================= STEP 2 ================= -->
+        <section id="step-2" class="step-content hidden">
+            <div class="border-b border-slate-100 pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">שלב 2: האתגר ברפואת טראומה – איום הדימום</h2>
+                <p class="text-slate-500 text-sm mt-1">מדוע אמצעים מכניים בשטח אינם מצליחים לעצור דימומים פנימיים?</p>
+            </div>
+
+            <!-- Mini Interactive Visual Highlights (חמוד ואינטראקטיבי) -->
+            <div class="mb-8">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 text-center">לחצו על האייקונים לגילוי האתגרים המרכזיים בטראומה:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <button onclick="toggleVisualFact('fact-1')" class="p-4 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-2xl text-center transition-all group">
+                        <span class="text-3xl block mb-1 group-hover:scale-110 transition-transform">🩸</span>
+                        <span class="font-bold text-rose-900 text-sm block">1. צניחת נפח דם</span>
+                        <p id="fact-1" class="hidden text-xs text-rose-700 mt-2 border-t border-rose-200 pt-2">המערכת מאבדת נוזלים במהירות והלב אינו מצליח לייצר לחץ דם תקין (לחץ הדם הוא מה שמאפשר לדם לזרום במהירות בכל הגוף).</p>
+                    </button>
+                    <button onclick="toggleVisualFact('fact-2')" class="p-4 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-2xl text-center transition-all group">
+                        <span class="text-3xl block mb-1 group-hover:scale-110 transition-transform">🫁</span>
+                        <span class="font-bold text-sky-900 text-sm block">2. מחסור בחמצן</span>
+                        <p id="fact-2" class="hidden text-xs text-sky-700 mt-2 border-t border-sky-200 pt-2">אובדן כדוריות דם אדומות מוביל לפגיעה בהספקת החמצן לאיברים חיוניים כמו המוח והלב.</p>
+                    </button>
+                    <button onclick="toggleVisualFact('fact-3')" class="p-4 bg-amber-50 hover:bg-amber-100 border border-amber-200 rounded-2xl text-center transition-all group">
+                        <span class="text-3xl block mb-1 group-hover:scale-110 transition-transform">🛡️</span>
+                        <span class="font-bold text-amber-900 text-sm block">3. מחסום הצלעות</span>
+                        <p id="fact-3" class="hidden text-xs text-amber-700 mt-2 border-t border-amber-200 pt-2">העצמות בולמות לחץ חיצוני, ולכן תחבושות לחץ וחסמי עורקים אינם יכולים לעצור דימום פנימי בחזה.</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Single Summary Question -->
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8">
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-full">שאלת סיכום</span>
+                <h4 class="font-bold text-slate-800 mt-3 mb-3">
+                    חובש מגיע לפצוע עם פציעת ירי חודרת בבית החזה. הדם ממשיך לפרוץ החוצה מבעד לתחבושת הלחץ שהונחה על הפצע. מהי הסיבה המרכזית לכך שאמצעים מכניים אלו אינם מצליחים לעצור את הדימום?
+                </h4>
+
+                <div class="space-y-3">
+                    <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-all">
+                        <input type="radio" name="q-step2" value="a" class="mt-1 text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">הדם בחלל החזה אינו מכיל פקטורי קרישה וטסיות דם.</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-all">
+                        <input type="radio" name="q-step2" value="b" class="mt-1 text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">המבנה הגרמי של הצלעות וחלל החזה הסגור מונעים הפעלת לחץ מכני ישיר על כלי הדם המדמם בתוך הגוף.</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-all">
+                        <input type="radio" name="q-step2" value="c" class="mt-1 text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">תחבושות לחץ פועלות אך ורק כאשר פצוע הטראומה נמצא במצב של היפותרמיה (חום גוף נמוך).</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-all">
+                        <input type="radio" name="q-step2" value="d" class="mt-1 text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">חסם עורקים ותחבושות מיועדים אך ורק לעצירת דימומים מאיברים פנימיים בבטן ובאגן.</span>
+                    </label>
+                </div>
+
+                <div id="feedback-step2" class="hidden mt-4 p-4 rounded-xl text-sm font-medium"></div>
+            </div>
+
+            <button onclick="checkStep2()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all shadow-md">
+                בדוק את התשובה לשלב 2
+            </button>
+        </section>
+
+        <!-- ================= STEP 3 ================= -->
+        <section id="step-3" class="step-content hidden">
+            <div class="border-b border-slate-100 pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">שלב 3: חזית הפיתוח – חומצה טרנקסמית (TXA)</h2>
+                <p class="text-slate-500 text-sm mt-1">חקרו את מנגנון ה-TXA, מניעת פירוק הפיברין וחלון ההזדמנויות הטיפולי.</p>
+            </div>
+
+            <!-- Opening Brainstorm Task -->
+            <div class="bg-emerald-50/60 border border-emerald-200 p-6 rounded-2xl mb-12">
+                <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider bg-emerald-200/70 px-3 py-1 rounded-full">משימת פתיחה</span>
+                <h4 class="font-bold text-emerald-950 mt-3 mb-2">סיעור מוחות ביוטכנולוגי:</h4>
+                <p class="text-sm text-emerald-900 mb-4">
+                    אם המטרה שלנו היא להגן על קריש הדם שנוצר ולמנוע ממנו להתפרק בזמן דימום קשה, איזה סוג של תרופה הכי הגיוני לפתח? <em>(סמנו את התשובות הנכונות)</em>
+                </p>
+
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-emerald-100 cursor-pointer">
+                        <input type="checkbox" id="txa-opt-1" class="rounded text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">חומרים שמאיצים ייצור של חלבוני קרישה חדשים בדם.</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-emerald-100 cursor-pointer">
+                        <input type="checkbox" id="txa-opt-2" class="rounded text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">חומרים שחוסמים את האנזים פלסמין (ה"מספריים") ומונעים ממנו לחתוך את הקריש.</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-emerald-100 cursor-pointer">
+                        <input type="checkbox" id="txa-opt-3" class="rounded text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">חומרים המגבירים את ההידבקות הראשונית של טסיות הדם.</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-emerald-100 cursor-pointer">
+                        <input type="checkbox" id="txa-opt-4" class="rounded text-emerald-600 focus:ring-emerald-500">
+                        <span class="text-sm text-slate-700">תרופה שמחזקת את הפיברין (ה"דבק").</span>
+                    </label>
+                </div>
+                <div id="feedback-step3-brainstorm" class="hidden mt-4 p-3 rounded-xl text-sm"></div>
+            </div>
+
+            <!-- Separator Line & Deep Research Questions Section -->
+            <div class="pt-8 border-t-2 border-slate-100 mb-6">
+                <h3 class="font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span>🔬</span>
+                    <span>שאלות חקר וניתוח סופיות</span>
+                </h3>
+            </div>
+
+            <div class="space-y-6 mb-8">
+                <!-- Intro Explanatory Box (Moved below Section Title) -->
+                <div class="bg-purple-50 border border-purple-200 p-4 rounded-2xl">
+                    <p class="text-sm text-purple-950 leading-relaxed font-medium">
+                        💡 <strong>מהי חומצה טרנקסמית (TXA)?</strong> תרופה מצילת חיים המעכבת את פירוק קרישי הדם. היא אינה יוצרת קרישים חדשים, אלא מונעת מאנזים הפלסמין לחתוך ולפרק את רשת הפיברין הקיימת בקרע.
+                    </p>
+                </div>
+
+                <!-- Visual Diagram Box for TXA Mechanism (Moved below Explanatory Box) -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-4 sm:p-6">
+                    <h3 class="text-center font-bold text-slate-800 text-base sm:text-lg mb-4">
+                        מנגנון הפעולה של TXA (חומצה טרנקסמית)
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Left Column: Without TXA -->
+                        <div class="bg-rose-50/70 border border-rose-200 p-4 rounded-2xl flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-extrabold text-rose-900 text-sm">ללא TXA (פירוק הקריש)</span>
+                                    <span class="text-xl">⚠️</span>
+                                </div>
+                                <div class="bg-white/80 p-3 rounded-xl border border-rose-100 text-xs text-rose-950 space-y-1 mb-3">
+                                    <p>• <strong>דופן כלי דם פגוע:</strong> קרע פתוח בצינור הדם.</p>
+                                    <p>• <strong>אנזימי פלסמין:</strong> פועלים כ"מספריים" חופשיות.</p>
+                                    <p>• <strong>סיבי פיברין:</strong> נחתכים ומפורקים ע"י הפלסמין.</p>
+                                </div>
+                            </div>
+                            <div class="bg-rose-200/80 p-2.5 rounded-xl text-center text-rose-950 font-bold text-xs">
+                                הפלסמין מפרק את הפיברין, והדימום נמשך
+                            </div>
+                        </div>
+
+                        <!-- Right Column: With TXA -->
+                        <div class="bg-emerald-50/70 border border-emerald-200 p-4 rounded-2xl flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-extrabold text-emerald-900 text-sm">עם TXA (ייצוב הקריש)</span>
+                                    <span class="text-xl">🛡️</span>
+                                </div>
+                                <div class="bg-white/80 p-3 rounded-xl border border-emerald-100 text-xs text-emerald-950 space-y-1 mb-3">
+                                    <p>• <strong>מולקולות TXA:</strong> נצמדות לאנזימי הפלסמין.</p>
+                                    <p>• <strong>פלסמין חסום:</strong> האתר הפעיל ("המספריים") ננעל.</p>
+                                    <p>• <strong>קריש דם עמיד:</strong> רשת הפיברין נשמרת שלמה.</p>
+                                </div>
+                            </div>
+                            <div class="bg-emerald-200/80 p-2.5 rounded-xl text-center text-emerald-950 font-bold text-xs">
+                                הפלסמין חסום, הקריש נשמר והדימום נעצר
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q1 in Step 3: Multiple choice limitations -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                    <label class="block font-semibold text-slate-800 mb-2">
+                        1. ניתוח מגבלות התרופה (חסרונות):
+                    </label>
+                    <p class="text-sm text-slate-600 mb-3">
+                        למרות ש-TXA היא תרופה פורצת דרך, איזה מענה היא אינה מסוגלת לתת לפצוע הטראומה? סמנו את כל ההיגדים הנכונים:
+                    </p>
+                    <div class="space-y-2 mb-4">
+                        <label class="flex items-start gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-purple-300">
+                            <input type="checkbox" id="txa-lim-1" class="mt-1 rounded text-purple-600 focus:ring-purple-500">
+                            <span class="text-sm text-slate-700">התרופה אינה מאיצה ייצור של קרישי דם חדשים.</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-purple-300">
+                            <input type="checkbox" id="txa-lim-2" class="mt-1 rounded text-purple-600 focus:ring-purple-500">
+                            <span class="text-sm text-slate-700">אי אפשר לתת את התרופה לטיפול בדימום מסיבי.</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-purple-300">
+                            <input type="checkbox" id="txa-lim-3" class="mt-1 rounded text-purple-600 focus:ring-purple-500">
+                            <span class="text-sm text-slate-700">התרופה אפקטיבית בלבד בחלון זמן קצר (עד 3 שעות מהפציעה).</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-purple-300">
+                            <input type="checkbox" id="txa-lim-4" class="mt-1 rounded text-purple-600 focus:ring-purple-500">
+                            <span class="text-sm text-slate-700">התרופה אינה מייצבת קריש דם קיים.</span>
+                        </label>
+                    </div>
+
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">הסבירו בקצרה את בחירתכם:</label>
+                    <textarea id="txa-lim-explain" rows="3" class="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none" placeholder="הסבירו מדוע בחרתם בהיגדים אלו..."></textarea>
+                    <div id="feedback-txa-lim" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+                </div>
+
+                <!-- Q2 in Step 3: Critical Time Window (3 Hours) -->
+                <div class="bg-amber-50/70 border border-amber-200 p-5 rounded-2xl">
+                    <label class="block font-semibold text-amber-900 mb-2">
+                        2. חלון הזמנים הקריטי (3 השעות):
+                    </label>
+                    <p class="text-sm text-amber-900/80 mb-3">
+                        במחקרים קליניים נמצא כי מתן חומצה טרנקסמית לאחר יותר מ-3 שעות מרגע הפציעה אינו מועיל ואף עלול להחמיר את מצב הפצוע. הסבירו מדוע תזמון המתן קריטי כל כך בהתחשב במנגנוני הקרישה והפירוק של הגוף.
+                    </p>
+                    <textarea id="open-time-window" rows="3" class="w-full p-3 bg-white border border-amber-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="איך התזמון משפיע על המאזן בין בניית קריש לפירוקו?"></textarea>
+                    <div id="feedback-time-window" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+                </div>
+
+                <!-- Q3 in Step 3: Systemic Risks -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                    <label class="block font-semibold text-slate-800 mb-2">
+                        3. ניתוח סיכונים פיזיולוגיים:
+                    </label>
+                    <p class="text-sm text-slate-600 mb-3">
+                        נסו לחשוב: מהם הסיכונים האפשריים בהזרקת תרופה שמייצבת קרישי דם בכל הגוף ובכל מחזור הדם (ולא רק באזור הפצוע)?
+                    </p>
+                    <textarea id="open-txa-risks" rows="3" class="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none" placeholder="מה עלול לקרות בכלי דם בריאים בלב או במוח?"></textarea>
+                    <div id="feedback-txa-risks" class="hidden mt-3 p-3 rounded-xl text-sm"></div>
+                </div>
+            </div>
+
+            <button onclick="checkStep3()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all shadow-md">
+                בדוק את התשובות לשלב 3
+            </button>
+        </section>
+
+        <!-- ================= STEP 4 ================= -->
+        <section id="step-4" class="step-content hidden">
+            <div class="border-b border-slate-100 pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">שלב 4: הגשת פתרון ביוטכנולוגי</h2>
+                <p class="text-slate-500 text-sm mt-1">סיימתם את שלבי החקר! עכשיו הזמן להגיש את המיזם שלכם בטופס ה-Forms.</p>
+            </div>
+
+            <!-- Preparation Checklist -->
+            <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-8">
+                <h4 class="font-bold text-emerald-900 text-sm mb-3 flex items-center gap-2">
+                    <span>📋</span> רשימת תזכורת (Checklist) לקראת מילוי הטופס:
+                </h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-emerald-950">
+                    <li class="flex items-center gap-2">
+                        <span class="text-emerald-600 font-bold">✓</span> ודאתם שהפתרון עונה על בעיית הדימום הבלתי נגיש (כמו בחלל החזה).
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-emerald-600 font-bold">✓</span> הגדרתם את המנגנון הביולוגי/פיזיולוגי של הפתרון.
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-emerald-600 font-bold">✓</span> התייחסתם לחלון הזמנים ולבטיחות הפצוע.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-900 to-emerald-950 text-white p-8 sm:p-10 rounded-3xl text-center shadow-xl">
+                <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 text-3xl rounded-2xl flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
+                    🚀
+                </div>
+                <h3 class="text-2xl font-bold mb-2">מוכנים להגיש את המיזם?</h3>
+                <p class="text-slate-300 text-sm max-w-md mx-auto mb-6 leading-relaxed">
+                    לחצו על הכפתור למעבר לטופס ההגשה החיצוני. שם תפרטו את שם המיזם, חברי הצוות והמנגנון המפורט.
+                </p>
+
+                <a href="#" id="forms-link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-8 py-4 rounded-2xl transition-all transform hover:-translate-y-0.5 shadow-lg">
+                    <span>מעבר לטופס ההגשה ב-Forms</span>
+                    <span class="text-lg">←</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Functions Block -->
+    <script>
+        // Global Navigation Function
+        function goToStep(stepNum) {
+            // Hide all steps
+            for (let i = 1; i <= 4; i++) {
+                const stepEl = document.getElementById('step-' + i);
+                const tabEl = document.getElementById('tab-' + i);
+                if (stepEl) stepEl.classList.add('hidden');
+                if (tabEl) {
+                    tabEl.classList.remove('bg-emerald-600', 'text-white');
+                    tabEl.classList.add('bg-slate-100', 'text-slate-600');
+                }
+            }
+
+            // Show selected step
+            const currentStep = document.getElementById('step-' + stepNum);
+            const currentTab = document.getElementById('tab-' + stepNum);
+            if (currentStep) currentStep.classList.remove('hidden');
+            if (currentTab) {
+                currentTab.classList.remove('bg-slate-100', 'text-slate-600');
+                currentTab.classList.add('bg-emerald-600', 'text-white');
+            }
+
+            // Update Progress Bar
+            const percent = stepNum * 25;
+            document.getElementById('progress-bar').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = 'שלב ' + stepNum + ' מתוך 4';
+            document.getElementById('progress-percent').innerText = percent + '% הושלמו';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle Visual Facts in Step 2
+        function toggleVisualFact(factId) {
+            const factEl = document.getElementById(factId);
+            if (factEl) {
+                factEl.classList.toggle('hidden');
+            }
+        }
+
+        // Check Step 1
+        function checkStep1() {
+            const m1 = document.getElementById('match-1').value;
+            const m2 = document.getElementById('match-2').value;
+            const m3 = document.getElementById('match-3').value;
+
+            const q1Text = document.getElementById('open-q1').value.trim();
+            const q2Text = document.getElementById('open-q2').value.trim();
+            const q3Text = document.getElementById('open-q3').value.trim();
+            const deepText = document.getElementById('open-deep').value.trim();
+
+            let matchesCorrect = (m1 === 'platelets' && m2 === 'fibrin' && m3 === 'plasmin');
+
+            const fb1 = document.getElementById('feedback-q1');
+            fb1.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+            if (q1Text.length > 5) {
+                fb1.classList.add('bg-emerald-100', 'text-emerald-900');
+                fb1.innerHTML = '✔ <strong>משוב:</strong> מצוין! התייחסתם להבדל בין הפקק הזמני של הטסיות לרשת הפיברין העמידה.';
+            } else {
+                fb1.classList.add('bg-amber-100', 'text-amber-900');
+                fb1.innerHTML = '💡 <strong>רמז:</strong> שימו לב שטסיות יוצרות חסימה זמנית, בעוד סיבי הפיברין יוצרים רשת רשתית חזקה.';
+            }
+
+            const fb2 = document.getElementById('feedback-q2');
+            fb2.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+            if (q2Text.length > 5) {
+                fb2.classList.add('bg-emerald-100', 'text-emerald-900');
+                fb2.innerHTML = '✔ <strong>משוב:</strong> נכון מאד! הפיכת חלבון מומס לרשת סיבים דביקה תופסת כדוריות דם ואוטמת את הקרע.';
+            } else {
+                fb2.classList.add('bg-amber-100', 'text-amber-900');
+                fb2.innerHTML = '💡 <strong>רמז:</strong> חשבו על רשת דייגים שתופסת חלקיקים ועוצרת מעבר נוזלים.';
+            }
+
+            const fb3 = document.getElementById('feedback-q3');
+            fb3.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+            if (q3Text.length > 5) {
+                fb3.classList.add('bg-emerald-100', 'text-emerald-900');
+                fb3.innerHTML = '✔ <strong>משוב:</strong> תשובה מעולה! הפלסמין מפרק את הקריש הישן כדי למנוע חסימה מיותרת של כלי הדם לאחר ההחלמה.';
+            } else {
+                fb3.classList.add('bg-amber-100', 'text-amber-900');
+                fb3.innerHTML = '💡 <strong>רמז:</strong> האנזים פלסמין פועל כ"מספריים" שמנקים את הקריש שכבר אין בו צורך.';
+            }
+
+            const fbDeep = document.getElementById('feedback-deep');
+            fbDeep.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+            if (deepText.length > 8) {
+                fbDeep.classList.add('bg-emerald-100', 'text-emerald-900');
+                fbDeep.innerHTML = '✔ <strong>ניתוח עמוק ומוצלח:</strong> הפעלה מוקדמת של פלסמין תפרק את הקריש תוך כדי הדימום ותגרום לאובדן דם מסיבי!';
+            } else {
+                fbDeep.classList.add('bg-amber-100', 'text-amber-900');
+                fbDeep.innerHTML = '💡 <strong>נקודה למחשבה:</strong> אם המפרק פועל מוקדם מדי, האם הקריש יצליח להחזיק מעמד?';
+            }
+
+            if (matchesCorrect && q1Text.length > 5 && q2Text.length > 5 && q3Text.length > 5) {
+                setTimeout(() => { goToStep(2); }, 2000);
+            }
+        }
+
+        // Check Step 2
+        function checkStep2() {
+            const selected = document.querySelector('input[name="q-step2"]:checked');
+            const fb = document.getElementById('feedback-step2');
+            fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-rose-100', 'text-rose-900');
+
+            if (!selected) {
+                fb.classList.add('bg-rose-100', 'text-rose-900');
+                fb.innerHTML = '⚠️ אנא בחרו אחת מהאפשרויות לפני הבדיקה.';
+                return;
+            }
+
+            if (selected.value === 'b') {
+                fb.classList.add('bg-emerald-100', 'text-emerald-900');
+                fb.innerHTML = '✔ <strong>נכון מאוד!</strong> עצמות בית החזה (הצלעות והסטרנום) בולמות את הלחץ המכני החיצוני, ולכן התחבושת אינה יכולה ללחוץ על כלי הדם המדמם במעמקי החזה.';
+                setTimeout(() => { goToStep(3); }, 2200);
+            } else {
+                fb.classList.add('bg-rose-100', 'text-rose-900');
+                fb.innerHTML = '❌ <strong>תשובה שגויה.</strong> רמז: חשבו על המבנה הגרמי הקשיח שמקיף את הריאות והלב והאם ניתן למעוך אותו מבחוץ.';
+            }
+        }
+
+        // Check Step 3
+        function checkStep3() {
+            // Brainstorm Check
+            const opt2 = document.getElementById('txa-opt-2').checked;
+            const opt1 = document.getElementById('txa-opt-1').checked;
+            const opt3 = document.getElementById('txa-opt-3').checked;
+            const opt4 = document.getElementById('txa-opt-4').checked;
+
+            const fbBrainstorm = document.getElementById('feedback-step3-brainstorm');
+            fbBrainstorm.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+
+            if (opt2 && !opt1 && !opt3 && !opt4) {
+                fbBrainstorm.classList.add('bg-emerald-100', 'text-emerald-900');
+                fbBrainstorm.innerHTML = '✔ <strong>מדויק!</strong> ה-TXA חוסמת את האנזים פלסמין ("המספריים") וכך מונעת את פירוק הקריש.';
+            } else {
+                fbBrainstorm.classList.add('bg-amber-100', 'text-amber-900');
+                fbBrainstorm.innerHTML = '💡 <strong>הכוונה:</strong> חומצה טרנקסמית אינה מאיצה ייצור קרישים אלא רק מונעת מאנזים הפלסמין לחתוך את הקריש הקיים (אפשרות 2).';
+            }
+
+            // Multiple choice Limitations Check with Detailed Feedback
+            const lim1 = document.getElementById('txa-lim-1').checked;
+            const lim2 = document.getElementById('txa-lim-2').checked;
+            const lim3 = document.getElementById('txa-lim-3').checked;
+            const lim4 = document.getElementById('txa-lim-4').checked;
+
+            const fbLim = document.getElementById('feedback-txa-lim');
+            fbLim.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-rose-100', 'text-rose-900', 'bg-amber-100', 'text-amber-900');
+
+            if (lim1 && lim3 && !lim2 && !lim4) {
+                fbLim.classList.add('bg-emerald-100', 'text-emerald-900');
+                fbLim.innerHTML = '✔ <strong>זיהוי מדויק!</strong> TXA אינה מאיצה ייצור קרישים חדשים והיא אפקטיבית בעיקר בחלון זמן של עד 3 שעות.';
+            } else {
+                let errDetails = [];
+                if (lim2) errDetails.push('היגד 2 שגוי (TXA מיועדת בדיוק לטיפול בדימום מסיבי!).');
+                if (lim4) errDetails.push('היגד 4 שגוי (TXA כן מייצבת קריש דם קיים ע"י חסימת הפירוק).');
+                if (!lim1) errDetails.push('חסר היגד 1 (TXA אינה מאיצה ייצור קרישים חדשים).');
+                if (!lim3) errDetails.push('חסר היגד 3 (חלון הזמנים הקריטי הינו 3 שעות).');
+
+                fbLim.classList.add('bg-rose-100', 'text-rose-900');
+                fbLim.innerHTML = '❌ <strong>שים לב:</strong> ' + errDetails.join(' ');
+            }
+
+            // Open Questions Feedback
+            const t2Text = document.getElementById('open-time-window').value.trim();
+            const fbTime = document.getElementById('feedback-time-window');
+            fbTime.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+            if (t2Text.length > 5) {
+                fbTime.classList.add('bg-emerald-100', 'text-emerald-900');
+                fbTime.innerHTML = '✔ <strong>ניתוח מעולה:</strong> לאחר 3 שעות מאזן הקרישה והפירוק בגוף משתנה, ועיכוב פלסמין בשלב מאוחר עלול לגרום לקרישי דם מסוכנים באיברים חיוניים.';
+            } else {
+                fbTime.classList.add('bg-amber-100', 'text-amber-900');
+                fbTime.innerHTML = '💡 <strong>רמז:</strong> חשבו מה קורה למאזן הקרישה בגוף ככל שחולף הזמן מהפציעה.';
+            }
+
+            const t3Text = document.getElementById('open-txa-risks').value.trim();
+            const fbRisks = document.getElementById('feedback-txa-risks');
+            fbRisks.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+            if (t3Text.length > 5) {
+                fbRisks.classList.add('bg-emerald-100', 'text-emerald-900');
+                fbRisks.innerHTML = '✔ <strong>חשיבה קלינית מצוינת:</strong> מתן מערכתי עלול לגרום לקרישי דם בלתי רצויים (תרומבוזה) בכלי דם בריאים בלב, במוח או ברגליים.';
+            } else {
+                fbRisks.classList.add('bg-amber-100', 'text-amber-900');
+                fbRisks.innerHTML = '💡 <strong>רמז:</strong> מה יקרה אם קריש דם ייווצר או יישמר בכלי דם שמזין את הלב או המוח?';
+            }
+        }
+
+        // Auto-Save Drafts in LocalStorage
+        function initAutoSave() {
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(ta => {
+                const saved = localStorage.getItem('draft_' + ta.id);
+                if (saved) ta.value = saved;
+                ta.addEventListener('input', () => {
+                    localStorage.setItem('draft_' + ta.id, ta.value);
+                });
+            });
+        }
+
+        window.onload = function() {
+            initAutoSave();
+        };
+    </script>
+</body>
+</html>
